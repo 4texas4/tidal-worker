@@ -35,7 +35,7 @@ export default {
           title: track.name,
           artist: track.artists.map(a => a.name).join(', '),
           artwork: track.album.images[0]?.url || '',
-          url: track.id
+          id: track.id
         }));
         
         return new Response(JSON.stringify({ success: true, results }), { headers: corsHeaders });
@@ -119,3 +119,4 @@ export default {
     return new Response('Not Found', { status: 404, headers: corsHeaders });
   }
 };
+
