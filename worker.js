@@ -26,7 +26,7 @@ export default {
         
         // Search Spotify
         const searchRes = await fetch(
-          `https://api.spotify.com/v1/search?q=${encodeURIComponent(query)}&type=track&limit=20`,
+          `https://api.spotify.com/v1/search?q=${encodeURIComponent(query)}&type=track&limit=20&market=US`,
           { headers: { Authorization: `Bearer ${tokenData.access_token}` } }
         );
         const searchData = await searchRes.json();
@@ -119,4 +119,5 @@ export default {
     return new Response('Not Found', { status: 404, headers: corsHeaders });
   }
 };
+
 
