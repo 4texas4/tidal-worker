@@ -17,7 +17,7 @@ export default {
 
     // Search endpoint: /s/QUERY
     if (path.startsWith('/s/')) {
-      const query = decodeURIComponent(path.slice(3));
+      const query = path.slice(3).replace(/\+/g, ' ');
       
       try {
         // Get Spotify token
